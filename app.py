@@ -41,7 +41,8 @@ def transform_data(input_data, selected_testing_type):
     if "Test Date" in df_input.columns:
         df_input["Test Date"] = pd.to_datetime(df_input["Test Date"], errors='coerce')
         transfer_df["Date"] = df_input["Test Date"].dt.date
-        transfer_df["Time"] = df_input["Test Date"].dt.time
+        transfer_df["Time"] = df_input["Test Date"].dt.strftime('%H:%M').astype(str)
+
     else:
         transfer_df["Date"] = "N/A"
         transfer_df["Time"] = "N/A"

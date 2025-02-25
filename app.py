@@ -89,10 +89,10 @@ def transform_data(input_data, selected_testing_type):
     # 6. Set Testing Type to the user-selected value for every row
     transfer_df["Testing Type"] = selected_testing_type
     
-    transfer_df["Flight Time"] = transfer_df["Flight Time"] /100
+    transfer_df["Flight Time"] = transfer_df["Flight Time"] /1000
     transfer_df["Height(imp)"] = transfer_df["Height(imp)"] /100
     transfer_df["Height(tof)"] = transfer_df["Height(tof)"] / 100
-    transfer_df["Contraction Time [ms]"] =  transfer_df["Contraction Time [ms]"] / 100
+    transfer_df["Contraction Time [ms]"] =  transfer_df["Contraction Time [ms]"] / 1000
     
     
     return transfer_df
